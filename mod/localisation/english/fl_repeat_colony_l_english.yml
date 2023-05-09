@@ -1,0 +1,5 @@
+﻿l_english:
+
+ tech_repeatable_colonize_speed:0 "Speedy Colonization Protocols"
+ tech_repeatable_colonize_speed_desc:0 "By leveraging new efficiency algorithms we may settle new worlds faster than ever before."
+ tech_repeatable_colonize_speed.icon:0 "$tech_repeatable_colonize_speed$ (£time£ time)"

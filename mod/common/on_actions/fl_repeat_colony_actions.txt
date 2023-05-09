@@ -1,0 +1,17 @@
+#
+automated_repeatables_register_repeatable = {
+	events = {
+		repeat_colony_register.1
+    }
+}
+
+on_tech_increased = {
+	events = {
+	    repeat_colony_level.1
+    }
+}
+automated_repeatables_apply_weights = {
+	events = {
+	    repeat_colony_weight.1
+    }
+}

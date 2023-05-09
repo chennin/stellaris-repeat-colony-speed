@@ -1,0 +1,47 @@
+namespace = repeat_colony_register
+namespace = repeat_colony_level
+namespace = repeat_colony_weight
+country_event = {
+	id = repeat_colony_register.1
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		automated_repeatables_register_repeatable = {
+			CR_NAME = tech_repeatable_colonize_speed.icon           # replace by the localisation key holding how your repeatable should be displayed at (name + very small description for example)
+			CR_FLAG = tech_repeatable_colonize_speed_flag           # replace by a UNIQUE flag for that repeatable (1 per repeatable you add)
+			CR_AREA = society                                       # the area (physics/society/engineering)
+			CR_DEFAULT_WEIGHT = 1                                   # the default weight, can be omitted, BUT has to be either (0 to 10, 15, 20, 25, 50, 100)
+		}
+	}
+}
+
+country_event = {
+	id = repeat_colony_level.1
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		last_increased_tech = tech_repeatable_colonize_speed    # the name of the tech
+	}
+	immediate = {
+		automated_repeatables_notify_level_increase = {
+			CR_FLAG = tech_repeatable_colonize_speed_flag          # the UNIQUE flag for that repeatable you set above
+		}
+	}
+}
+
+# Here make sure NOT TO FIRE AN INTERMEDIARY EVENT (as this scripted effect needs the FROM)
+country_event = {
+	id = repeat_colony_weight.1
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		from = {
+			has_leader_flag = tech_repeatable_colonize_speed_flag  # the UNIQUE flag for that repeatable you set above
+		}
+	}
+	immediate = {
+		automated_repeatables_apply_weights = {
+			CR_WEIGHT_NAME = tech_repeatable_colonize_speed_weight # a UNIQUE variable name that will old the weight (you can set it to the same as the flag if you want too)
+		}
+	}
+}
