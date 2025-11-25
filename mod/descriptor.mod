@@ -4,5 +4,5 @@ tags={
 }
 name="Repeatable Colony Development Time Improvement"
 picture="thumbnail.png"
-supported_version="v4.0.*"
+supported_version="v4.2.*"
 remote_file_id="2939362547"
